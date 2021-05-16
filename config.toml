@@ -1,0 +1,7 @@
+[postgresql]
+host=localhost
+user=postgres
+database=magicians
+
+[data]
+year=2022
