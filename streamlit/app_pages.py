@@ -4,6 +4,11 @@ import app_info
 import app_form
 import app_matches
 # import SessionState
+<<<<<<< HEAD
+=======
+import sys
+sys.path.append("..")
+>>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
 from config import config
 
 # session_state = SessionState.get(admin=False, admin_pw='')
