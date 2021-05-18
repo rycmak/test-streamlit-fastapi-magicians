@@ -19,12 +19,9 @@ services:
       - deploy_network
     container_name: streamlit
 
-<<<<<<< HEAD
   db:
     build: db/
 
-=======
->>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
 networks:
   deploy_network:
     driver: bridge

@@ -15,21 +15,13 @@ def init_db():
                       id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
                       year INTEGER UNIQUE NOT NULL);"
   insert_rounds = "INSERT INTO rounds (year) VALUES (%s);"
-<<<<<<< HEAD
   cursor.execute(insert_rounds, [config(filename="config.toml", section='data')['year']])
-=======
-  cursor.execute(insert_rounds, [config(filename="../config.toml", section='data')['year']])
->>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
   """
   connection = None
   if "DATABASE_URL" in os.environ:
     DATABASE_URL = os.environ["DATABASE_URL"]
   else:
-<<<<<<< HEAD
     db = config(filename="config.toml")
-=======
-    db = config(filename="../config.toml")
->>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
     DATABASE_URL = f"postgresql://{db['user']}@{db['host']}/{db['database']}"
     print("DATABASE_URL", DATABASE_URL)
   try:
@@ -89,11 +81,7 @@ def save(connection, response):
                     [response["city"], response["country"]])
       location_id = cur.fetchone()
       cur.execute("SELECT id FROM rounds WHERE year = %s", 
-<<<<<<< HEAD
         [config(filename="config.toml", section='data')['year']])
-=======
-        [config(filename="../config.toml", section='data')['year']])
->>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
       round_id = cur.fetchone()
       cur.execute(insert_magicians_rounds, [magician_id, location_id, response["comments"], round_id])
       st.success("Success!  You are now a magician! 🎉")

@@ -12,11 +12,7 @@ def connect_db():
   if "DATABASE_URL" in os.environ:
     DATABASE_URL = os.environ["DATABASE_URL"]
   else:
-<<<<<<< HEAD
     db = config(filename="config.toml")
-=======
-    db = config(filename="../config.toml")
->>>>>>> 8f8fc376387e6bc92e85279e429405d5b3d19524
     DATABASE_URL = f"postgresql://{db['user']}@{db['host']}/{db['database']}"
   print("DATABASE_URL", DATABASE_URL)
   try:
