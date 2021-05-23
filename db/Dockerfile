@@ -1,4 +1,0 @@
-FROM postgres:latest
-ENV POSTGRES_USER=postgres
-ENV POSTGRES_HOST_AUTH_METHOD=trust
-ENV POSTGRES_DB=magicians
